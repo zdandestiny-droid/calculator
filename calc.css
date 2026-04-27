@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: aliceblue;
+}
+#calculator {
+    width: 450px;
+    background: rgba(8, 18, 36, 0.95);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
+}
+#display {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    font-size: 3rem;
+    text-align: right;
+    background-color: #0d1c3b;
+    color: #EAF4FF;
+    box-sizing: border-box;
+}
+
+#display::placeholder {
+    color: transparent;
+}
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 10px;
+}
+button {
+    width: 100%;
+    height: 90px;
+    border-radius: 22px;
+    border: none;
+    color: #B8F3FF;
+    font-size: 2rem;
+    cursor: pointer;
+    background: #142A55;
+    box-sizing: border-box;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.32);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
+}
+.operator {
+    background: rgb(15, 192, 15);
+    color: #FFFFFF;
+}
+.clear {
+    background: #f0325e;
+    color: #FFFFFF;
+}
+#operator-btn {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    #calculator {
+        width: min(420px, 100%);
+        border-radius: 28px;
+    }
+    #display {
+        padding: 18px;
+        font-size: 2.5rem;
+    }
+    #keys {
+        gap: 10px;
+        padding: 10px;
+    }
+    button {
+        height: 80px;
+        font-size: 1.8rem;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+    #calculator {
+        width: 100%;
+        border-radius: 24px;
+    }
+    #display {
+        padding: 16px;
+        font-size: 2.2rem;
+    }
+    #keys {
+        gap: 8px;
+        padding: 8px;
+    }
+    button {
+        height: 70px;
+        font-size: 1.6rem;
+        border-radius: 18px;
+    }
+    #operator-btn {
+        grid-column: span 2;
+    }
+}
